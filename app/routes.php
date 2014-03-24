@@ -16,18 +16,6 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/sayhello/{name}', function($name)
-{
-    if ($name == "Chris")
-    {
-        return Redirect::to('/');
-    }
-    else
-    {
-        return "Hello, $name!";
-    }
-});
-
 Route::get('/resume', function()
 {
 	return 'This is my resume.';
@@ -36,4 +24,19 @@ Route::get('/resume', function()
 Route::get('/portfolio', function()
 {
 	return 'This is my portfolio.';
+});
+
+Route::get('/sayhello/{name}', function($name)
+{   
+	$data = array(
+    	'name1' => $name
+	);
+
+    return View::make('my-first-view')->with($data);
+});
+
+Route::get('/rolldice/', function()
+{
+	$random = mt_rand(1,6);
+	return View::make('roll-dice')->with('random', $random);
 });
