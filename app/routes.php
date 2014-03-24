@@ -35,8 +35,13 @@ Route::get('/sayhello/{name}', function($name)
     return View::make('my-first-view')->with($data);
 });
 
-Route::get('/rolldice/', function()
+Route::get('/rolldice/{guess}', function($guess)
 {
 	$random = mt_rand(1,6);
-	return View::make('roll-dice')->with('random', $random);
+	$data =  array(
+		'guess' => $guess,
+		'random' => $random );
+
+	return View::make('roll-dice')->with($data);
+
 });
