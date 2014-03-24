@@ -30,10 +30,10 @@ Route::get('/sayhello/{name}', function($name)
 
 Route::get('/resume', function()
 {
-	return 'This is my resume.'
+	return 'This is my resume.';
 });
 
 Route::get('/portfolio', function()
 {
-	return 'This is my portfolio.'
+	return 'This is my portfolio.';
 });
