@@ -38,9 +38,19 @@ Route::get('/sayhello/{name}', function($name)
 Route::get('/rolldice/{guess}', function($guess)
 {
 	$random = mt_rand(1,6);
+
+	if ($random==$guess){
+        $msg = "There is a match";
+	}
+	else{
+		$msg = "There is not a match";
+	}
+
 	$data =  array(
 		'guess' => $guess,
-		'random' => $random );
+		'random' => $random, 
+		'msg' => $msg
+	);
 
 	return View::make('roll-dice')->with($data);
 
