@@ -29,7 +29,7 @@ Route::get('/portfolio', function()
 Route::get('/sayhello/{name}', function($name)
 {   
 	$data = array(
-    	'name1' => $name
+    	'name' => $name
 	);
 
     return View::make('my-first-view')->with($data);
