@@ -16,14 +16,24 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('/index', function()
+{
+	return View::make('index');
+});
+
 Route::get('/resume', function()
 {
-	return 'This is my resume.';
+	return View::make('resume');
 });
 
 Route::get('/portfolio', function()
 {
-	return 'This is my portfolio.';
+	return View::make('portfolio');
+});
+
+Route::get('/contact', function()
+{
+	return View::make('contact');
 });
 
 Route::get('/sayhello/{name}', function($name)
