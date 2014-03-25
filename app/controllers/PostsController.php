@@ -10,7 +10,13 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		//
-		return "This is the page that indexes";
+		Log::info('This is some useful information.');
+
+		Log::warning('Something could be going wrong.');
+
+		Log::error('Something is really going wrong.');
+
+		return "Show a list of all posts.";
 	}
 
 	/**
@@ -21,8 +27,8 @@ class PostsController extends \BaseController {
 	public function create()
 	{
 		//
-        return "This is the page that creates";
-	}
+        return View::make('posts.create');	
+    }
 
 	/**
 	 * Store a newly created resource in storage.
@@ -32,7 +38,7 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		//
-		return "This is the pages that stores";
+		return Redirect::back()->withInput();
 	}
 
 	/**
