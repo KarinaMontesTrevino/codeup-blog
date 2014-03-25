@@ -6,6 +6,10 @@
         margin-left: 40px;
         float: left;
       }
+
+      address{
+      	margin-left: 40px;
+      }
  </style>
  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
  <script type="text/javascript">
@@ -82,4 +86,16 @@
 			</div>
 		</div>
 </body>
+
+<address>
+  <strong>Codeup.</strong><br>
+  112 E. Pecan St.<br>
+  San Antonio, TX 78205<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Karina Montes</strong><br>
+  <a href="mailto:#">first.last@example.com</a>
+</address>
 @stop

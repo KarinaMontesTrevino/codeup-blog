@@ -1,9 +1,9 @@
-@extends('layouts.master')
-
-@section('content')
-    <h1>Hello, {{$name}}!</h1>
-@stop
-
-@section('bottomscript')
-         
-@stop    
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    	<title></title>
+    </head>
+    <body>
+         <h1>Hello, {{{$name}}}!</h1>
+    </body>
+</html>

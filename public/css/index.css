@@ -1,12 +1,13 @@
 .navbar-default {
       background-color: #A61F38;
       font-family: 'Corben', Georgia, Times, serif;
+      color: #000;
       font-size: 16px;
       line-height: 30px;
 }
 
 .navbar-brand{
-      background-color: #A61F38;
+      background-color: #000;
       font-family: 'Corben', Georgia, Times, serif;
       font-size: 16px;
       line-height: 30px;

@@ -11,57 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
-Route::get('/index', function()
-{
-	return View::make('index');
-});
+Route::get('/index', 'HomeController@showHome');
 
-Route::get('/resume', function()
-{
-	return View::make('resume');
-});
+Route::get('/resume', 'HomeController@showResume');
 
-Route::get('/portfolio', function()
-{
-	return View::make('portfolio');
-});
+Route::get('/portfolio', 'HomeController@showPortfolio');
 
-Route::get('/contact', function()
-{
-	return View::make('contact');
-});
+Route::get('/contact', 'HomeController@showContact');
 
-Route::get('/sayhello/{name}', function($name)
-{   
-	$data = array(
-    	'name' => $name
-	);
+Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
-    return View::make('my-first-view')->with($data);
-});
-
-Route::get('/rolldice/{guess}', function($guess)
-{
-	$random = mt_rand(1,6);
-
-	if ($random==$guess){
-        $msg = "There is a match";
-	}
-	else{
-		$msg = "There is not a match";
-	}
-
-	$data =  array(
-		'guess' => $guess,
-		'random' => $random, 
-		'msg' => $msg
-	);
-
-	return View::make('roll-dice')->with($data);
-
-});
+Route::get('/rolldice/{guess}', "HomeController@showRandom");

@@ -15,8 +15,7 @@
 	<link href="/css/index.css" rel="stylesheet">
 	@yield('topscript')
 
-  <body>
-  
+<body>  
     <div class="container">
 
       <!-- Static navbar -->
@@ -29,15 +28,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index">Kimt3D</a>
+            <a class="navbar-brand" href="{{{ action('HomeController@showHome') }}}">Karina Montes</a>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class ="#"><a href="#">About Me</a></li>
-              <li><a href="portfolio">Portfolio</a></li>
-              <li><a href="resume">Resume</a></li>
+              <li><a href="{{{ action('HomeController@showPortfolio') }}}">Portfolio</a></li>
+              <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="contact">Contact Me</a></li>
+              <li><a href="{{{ action('HomeController@showContact') }}}">Contact Me</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
              <li><a href="http://www.linkedin.com/in/karinamontestrevino"><i class="fa fa-linkedin"></i></a></li> 
@@ -57,7 +56,6 @@
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> 
-    @yield('bottomscript')
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>     
 </body>
 </html>
