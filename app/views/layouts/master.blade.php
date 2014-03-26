@@ -50,7 +50,7 @@
     <!-- FOOTER -->
       <footer class="footer">
         <!-- <p class="pull-right"><a href="#">Back to top</a></p> -->
-        <p>&copy; 2014 Karina Montes-Trevino &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="#">Back to top</a></span></p>
+        <p>&copy; 2014 Karina Montes-Trevino &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a><span class="pull-right"><a href="#">Back to top</a></span></p>
       </footer>
 </div> <!-- /container -->
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

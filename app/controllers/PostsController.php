@@ -10,12 +10,7 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		//
-		Log::info('This is some useful information.');
-
-		Log::warning('Something could be going wrong.');
-
-		Log::error('Something is really going wrong.');
-
+		
 		return "Show a list of all posts.";
 	}
 
@@ -38,6 +33,7 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		//
+		Log::info(Input::all());
 		return Redirect::back()->withInput();
 	}
 
