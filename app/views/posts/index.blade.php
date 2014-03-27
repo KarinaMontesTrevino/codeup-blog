@@ -12,5 +12,8 @@
             	<p>{{{$post->body}}}</p>
     	</div>
  	@endforeach
-       
+       <hr>
+       <p>
+            <a href="{{{action ('PostsController@create') }}}"> Create New Post</a> 
+       </p>
 @stop
