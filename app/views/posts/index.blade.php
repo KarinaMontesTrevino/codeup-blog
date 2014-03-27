@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1 class="blog-title">Technologik Blog</h1><span class="lead">Technology at your fingertips</span> 
+	<h1 class="blog-title">Technologic Blog</h1><span class="lead">Technology at your fingertips</span> 
        <p>
             <h4><a href="{{{action ('PostsController@create') }}}"> Create New Post</a></h4>
        </p>
