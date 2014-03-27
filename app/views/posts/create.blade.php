@@ -3,6 +3,7 @@
 @section('content')
 
 <h1 class = "blog-title">Create a New Post</h1>
+
    <div class = "blog-post">
     {{ Form::open(array('action' => 'PostsController@store', 'class' => 'form-horizontal')) }}
 	{{ Form::token() }}
