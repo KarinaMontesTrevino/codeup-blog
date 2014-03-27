@@ -6,7 +6,6 @@
 
    <div class = "blog-post">
     {{ Form::open(array('action' => 'PostsController@store', 'class' => 'form-horizontal')) }}
-	{{ Form::token() }}
 		  <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 			  {{ Form::label('title', 'Title', array('class'=> 'col-sm-2 control-label'))}}
 			    <div class="col-sm-10">
