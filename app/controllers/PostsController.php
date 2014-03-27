@@ -12,7 +12,7 @@ class PostsController extends \BaseController {
 		//Show a list of all posts
 
 		$posts = Post::all();
-        return View::make('posts.index')->with('posts', $posts);
+        return View::make('posts.index')->with(array('posts'=> $posts));
 	}
 
 	/**
@@ -56,7 +56,7 @@ class PostsController extends \BaseController {
 	{
 		//
 		$post = Post::find($id);
-		return View::make('posts.show')->with('post', $post);
+		return View::make('posts.show')->with(array('post'=> $post));
 	}
 
 	/**
