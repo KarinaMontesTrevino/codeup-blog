@@ -11,7 +11,7 @@ class PostsController extends \BaseController {
 	{
 		//Show a list of all posts
 
-		$posts = Post::all();
+		$posts = Post::paginate(4);
         return View::make('posts.index')->with(array('posts'=> $posts));
 	}
 
@@ -36,8 +36,6 @@ class PostsController extends \BaseController {
 
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
-
-	    Log::info(Input::all());
 
 	    // attempt validation
 	    if ($validator->fails())
@@ -93,8 +91,27 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-		return "This is the page that updates";
+		$post = Post::findOrFail($id);
+
+		// create the validator
+	    $validator = Validator::make(Input::all(), Post::$rules);
+
+	    // attempt validation
+	    if ($validator->fails())
+	    {
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    }
+	    else
+	    {
+	        // validation succeeded, create and save the post
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+			$post->save();
+
+			return Redirect::action('PostsController@index');
+	    }
+
 	}
 
 	/**

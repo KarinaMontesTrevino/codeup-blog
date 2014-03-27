@@ -2,8 +2,7 @@
 
 @section('content')
 
-	<h1 class="blog-title">Web Development Blog</h1>
-
+	<h1 class="blog-title">Technologik Blog</h1><span class="lead">Technology at your fingertips</span> 
        <p>
             <h4><a href="{{{action ('PostsController@create') }}}"> Create New Post</a></h4>
        </p>
@@ -18,5 +17,7 @@
             	<hr>
     	</div>
  	@endforeach
+
+  {{ $posts->links() }}
     
 @stop
