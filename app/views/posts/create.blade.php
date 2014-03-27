@@ -9,7 +9,7 @@
 		  <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 			  {{ Form::label('title', 'Title', array('class'=> 'col-sm-2 control-label'))}}
 			    <div class="col-sm-10">
-                  {{ Form::text('title',  null, array('class' => 'form-control', 'placeholder' => 'Title')) }}
+                  {{ Form::text('title',  null, array('class' => 'form-control', 'placeholder' => 'Enter Title')) }}
                   {{  $errors->first('title', '<span class="help-block">:message</span>') }}
 			    </div>
 		   </div>
