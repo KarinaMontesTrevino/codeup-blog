@@ -35,7 +35,7 @@
               <li class ="#"><a href="#">About Me</a></li>
               <li><a href="{{{ action('HomeController@showPortfolio') }}}">Portfolio</a></li>
               <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
               <li><a href="{{{ action('HomeController@showContact') }}}">Contact Me</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
