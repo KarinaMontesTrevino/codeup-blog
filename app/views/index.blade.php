@@ -2,10 +2,10 @@
   <head>    
     <link href="/css/carousel.css" rel="stylesheet">
     <style>
-     .jumbotron{
-
-     	width: 1135px;
-     	margin-left: 70px;
+     .container p{
+     
+     text-shadow: 2px 2px #FFF;
+     	
      }
 
     </style>
