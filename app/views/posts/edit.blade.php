@@ -5,7 +5,7 @@
 <h1 class = "blog-title">Edit Post</h1>
 
    <div class = "blog-post">
-    {{ Form::open(array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'class' => 'form-horizontal')) }}
+    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'class' => 'form-horizontal')) }}
 	{{ Form::token() }}
 		  <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 			  {{ Form::label('title', 'Title', array('class'=> 'col-sm-2 control-label'))}}
@@ -23,7 +23,7 @@
 			  </div>
 			  <div class="form-group">
 				  <div class="col-sm-offset-2 col-sm-10">
-					  <button type ="submit" class ="btn btn-default">Create Post</button>
+					  <button type ="submit" class ="btn btn-default">Save Changes</button>
 				  </div>
 		      </div>
 	{{ Form::close() }}
