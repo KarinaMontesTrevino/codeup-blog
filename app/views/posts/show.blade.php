@@ -4,7 +4,7 @@
           
             	<h3 class="blog-post-title">{{{$post->title}}}</h3>
             	<p>{{{$post->body}}}</p>
-                <p class="pull-right">{{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A')}}}</p>
+                <br>{{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A')}}}
 
             	<br><hr>
             	<p><h4><a href = "{{{ action ('PostsController@index') }}}">Return to posts listings</a> | 

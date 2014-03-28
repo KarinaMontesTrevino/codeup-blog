@@ -2,8 +2,7 @@
 
 @section('content')
 
-<h1 class = "blog-title">Create a New Post</h1>
-
+<h2 class = "blog-title">Create a New Post</h2>
    <div class = "blog-post">
     {{ Form::open(array('action' => 'PostsController@store', 'class' => 'form-horizontal')) }}
 		  <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">

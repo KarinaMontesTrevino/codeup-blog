@@ -14,7 +14,8 @@
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
 	  <link href="/css/index.css" rel="stylesheet">
 	  @yield('topscript')
-<body>  
+<body> 
+
     <div class="container">
 
       <!-- Static navbar -->
@@ -44,6 +45,13 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </div>
+
+        @if (Session::has('successMessage'))
+            <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+        @endif
+        @if (Session::has('errorMessage'))
+            <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+        @endif 
       
     @yield('content')    
     <!-- FOOTER -->

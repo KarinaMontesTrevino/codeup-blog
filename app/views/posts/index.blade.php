@@ -7,13 +7,13 @@
   .btn.btn-primary-sm{
   	padding: 0px;
   }
-  
+
 </style>
 @section('content')
 
 	<h1 class="blog-title">Technologic Blog</h1><span class="lead">Technology at your fingertips</span> 
 			 <p>
-						<h4><a href="{{{action ('PostsController@create') }}}"> Create New Post</a></h4>
+						<h5><a href="{{{action ('PostsController@create') }}}"> Create New Post</a></h5>
 			 </p>
 			 <hr>
 
@@ -26,7 +26,7 @@
 					</div>
 
 					<p>{{{ Str::words($post->body, 100) }}}</p>
-					<p class= "pull-right">{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A')}}</p>
+					<br>{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A')}}
 
 					<br><hr>
 			</div>
