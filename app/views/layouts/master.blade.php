@@ -12,9 +12,8 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <!--Google fonts-->
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
-	<link href="/css/index.css" rel="stylesheet">
-	@yield('topscript')
-
+	  <link href="/css/index.css" rel="stylesheet">
+	  @yield('topscript')
 <body>  
     <div class="container">
 
@@ -53,9 +52,11 @@
         <p>&copy; 2014 Karina Montes-Trevino &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a><span class="pull-right"><a href="#">Back to top</a></span></p>
       </footer>
 </div> <!-- /container -->
+    <link href="/js/jquery.js">
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>     
+    @yield('bottom-script')
 </body>
 </html>
