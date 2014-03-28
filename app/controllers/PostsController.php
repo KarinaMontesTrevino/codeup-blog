@@ -123,7 +123,8 @@ class PostsController extends \BaseController {
 	public function destroy($id)
 	{
 		//
-		return "This is the page that destroys";
+		Post::findOrFail($id)->delete();
+		return Redirect::action('PostsController@index');
 	}
 
 }
