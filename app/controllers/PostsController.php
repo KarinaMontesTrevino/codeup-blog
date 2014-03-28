@@ -11,7 +11,7 @@ class PostsController extends \BaseController {
 	{
 		//Show a list of all posts
 
-		$posts = Post::paginate(4);
+		$posts = Post::orderBy('created_at', 'desc')->paginate(4);
         return View::make('posts.index')->with(array('posts'=> $posts));
 	}
 
