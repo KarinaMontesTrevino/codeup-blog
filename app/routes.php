@@ -26,3 +26,5 @@ Route::get('/sayhello/{name}', 'HomeController@sayHello');
 Route::get('/rolldice/{guess}', "HomeController@showRandom");
 
 Route::resource('posts', 'PostsController');
+
+
