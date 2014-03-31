@@ -39,42 +39,37 @@
  </script>
 @section('content')	
 <body onload="initialize()">
-	<div style="margin-top:0px">
  <div id="map_canvas"></div>
-			<div class="container">
-				<div class="panel panel-default" style="margin-left:580px; width:500px">
-					<div class="panel-heading">
-						<h2 class="panel-title">Contact Form</h2>
-					</div>
+			<div class="container"><h2 class="text-center">Say Hello!</h2>
 					<div class="panel-body">
 						<form name="contactform" method="post" action= class="form-horizontal" role="form">
 							<div class="form-group">
-								<label for="inputName" class="col-lg-2 control-label">Name</label>
-								<div class="col-lg-10">
+								<label for="inputName" class="col-sm-1 control-label">Name</label>
+								<div class="col-sm-5">
 									<input type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-								<div class="col-lg-10">
+								<label for="inputEmail1" class="col-sm-1 control-label">Email</label>
+								<div class="col-sm-5">
 									<input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your Email">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputSubject" class="col-lg-2 control-label">Subject</label>
-								<div class="col-lg-10">
+								<label for="inputSubject" class="col-sm-1 control-label">Subject</label>
+								<div class="col-sm-5">
 									<input type="text" class="form-control" id="inputSubject" name="inputSubject" placeholder="Subject Message">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputPassword1" class="col-lg-2 control-label">Message</label>
-								<div class="col-lg-10">
+								<label for="inputPassword1" class="col-sm-1 control-label">Message</label>
+								<div class="col-sm-5">
 									<textarea class="form-control" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..."></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<div class="col-lg-offset-2 col-lg-10">
-									<button type="submit" class="btn btn-default">
+								<div class="col-sm-offset-1 col-sm-5">
+									<button type="submit" class="btn btn-primary">
 										Send Message
 									</button>
 								</div>
@@ -83,19 +78,17 @@
 
 					</div>
 				</div>
-			</div>
-		</div>
+
+				<address>
+				  <strong>Codeup.</strong><br>
+				  112 E. Pecan St.<br>
+				  San Antonio, TX 78205<br>
+				  <abbr title="Phone">P:</abbr> (123) 456-7890
+				</address>
+
+				<address>
+				  <strong>Karina Montes</strong><br>
+				  <a href="mailto:#">first.last@example.com</a>
+				</address>
 </body>
-
-<address>
-  <strong>Codeup.</strong><br>
-  112 E. Pecan St.<br>
-  San Antonio, TX 78205<br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
-
-<address>
-  <strong>Karina Montes</strong><br>
-  <a href="mailto:#">first.last@example.com</a>
-</address>
 @stop
