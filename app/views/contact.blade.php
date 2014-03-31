@@ -84,8 +84,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
 
 <address>
   <strong>Codeup.</strong><br>
