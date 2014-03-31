@@ -2,7 +2,7 @@
 
 use Carbon\Carbon;
 
-class BaseModel extends Elequent{
+class BaseModel extends Eloquent{
 
    // stuff goes here
 
