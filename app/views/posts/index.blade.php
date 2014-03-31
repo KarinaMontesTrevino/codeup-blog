@@ -26,7 +26,7 @@
 					</div>
 
 					<p>{{{ Str::words($post->body, 100) }}}</p>
-					<br>{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i A')}}
+					<br>{{$post->created_at->format('l, F jS Y @ h:i A')}}
 
 					<br><hr>
 			</div>
