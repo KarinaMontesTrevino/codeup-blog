@@ -1,7 +1,7 @@
 @extends('layouts.master')
 <style>
-       #map_canvas {
-        width: 450px;
+        #map_canvas {
+        width: 500px;
         height: 430px;
         margin-left: 40px;
         float: left;
@@ -9,21 +9,6 @@
 
       address{
       	margin-left: 40px;
-      	margin-top: 10px;
-      }
-
-      #cont-form{
-        float: right;
-        margin-right: 40px;
-        width: 600px;
-        height: 430px;
-      }
-
-      #address{
-        margin-right: 40px;
-        width: 1200px;
-        height: 180px;
-
       }
  </style>
  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -100,7 +85,7 @@
 				</div>
 			</div>
 		</div>
-</body>
+
 
 <address>
   <strong>Codeup.</strong><br>
@@ -113,4 +98,5 @@
   <strong>Karina Montes</strong><br>
   <a href="mailto:#">first.last@example.com</a>
 </address>
+</body>
 @stop
