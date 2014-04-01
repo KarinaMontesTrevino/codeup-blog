@@ -36,6 +36,7 @@
 
 			<p>{{{ Str::words($post->body, 100) }}}</p>
 			<br>{{$post->created_at->format('l, F jS Y @ h:i A')}}
+			<br>Written by: {{$post->user->email }}
             <br><hr>
 		</div>
 	@endforeach

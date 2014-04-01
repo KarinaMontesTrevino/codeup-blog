@@ -2,9 +2,10 @@
 @section('content')
 
           
-            	<h3 class="blog-post-title">{{{$post->title}}}</h3>
-            	<p>{{{$post->body}}}</p>
-                <br>{{{$post->created_at->format('l, F jS Y @ h:i A')}}}
+            	<h3 class="blog-post-title">{{{ $post->title }}}</h3>
+            	<p>{{{ $post->body }}}</p>
+                <br>{{{ $post->created_at->format('l, F jS Y @ h:i A') }}}
+                <br>Writen by: {{{ $post->user->email }}}
 
             	<br><hr>
             	<p><h4><a href = "{{{ action ('PostsController@index') }}}">Return to posts listings</a> | 
