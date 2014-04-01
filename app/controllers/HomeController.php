@@ -67,4 +67,31 @@ class HomeController extends BaseController {
 		return View::make('roll-dice')->with($data);
     }
 
+    public function showLogin()
+    {
+    	return View::make('login');
+    }
+
+    public function doLogin()
+    {
+    	$eMail = Input::get('email');
+    	$password = Input::get('password');
+
+    	if (Auth::attempt(array('email' => $eMail, 'password' => $password)))
+		{
+		    return Redirect::intended('/posts');
+		}
+		else
+		{
+		    Session::flash('loginError', 'Login failed! Try again');
+		    return Redirect::back()->withInput();
+		}
+	}
+
+	public function logout()
+    {
+    	Auth::logout();
+    	return Redirect::action("PostsController@index");	
+    }
+
 }
