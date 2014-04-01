@@ -10,6 +10,12 @@
 
 </style>
 @section('content')
+   
+    {{ Form::open(array('action'=> array('PostsController@index'), 'method'=>'get')) }}      
+    {{ Form::label('search', 'Search Posts') }}
+    {{ Form:: text('search')}}
+    {{ Form::submit('Search')}}
+    {{ Form::close() }}
 
 	<h1 class="blog-title">Technologic Blog</h1><span class="lead">Technology at your fingertips</span> 
 			 <p>

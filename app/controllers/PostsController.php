@@ -20,7 +20,17 @@ class PostsController extends \BaseController {
 	{
 		//Show a list of all posts
 
-		$posts = Post::orderBy('created_at', 'desc')->paginate(4);
+		$search = Input::get('search');
+		$query = Post::orderBy('created_at', 'desc');
+
+		if (is_null($search)){
+			$posts = $query->paginate(4);
+
+		} else{
+
+			$posts = $query->where('title', 'LIKE', "%{$search}%")->paginate(4);
+		}
+
         return View::make('posts.index')->with(array('posts'=> $posts));
 	}
 
