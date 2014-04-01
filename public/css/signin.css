@@ -1,9 +1,13 @@
 body {
-  padding-top: 40px;
+  padding-top: 0px;
   padding-bottom: 40px;
-  background-color: #eee;
+  /*background-color: #eee;**/
+  background-image: url('/img/wood.jpg')
 }
+div #formlogin{
 
+  padding-bottom: 220px;
+}
 .form-signin {
   max-width: 330px;
   padding: 15px;

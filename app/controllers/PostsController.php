@@ -69,7 +69,7 @@ class PostsController extends \BaseController {
 	    {
 	        // validation succeeded, create and save the post
 	        $post = new Post();
-	        $post->user_id = 1;
+	        $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 

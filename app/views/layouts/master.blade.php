@@ -18,7 +18,6 @@
 <body> 
 
 		<div class="container">
-
 			<!-- Static navbar -->
 			<div class="navbar navbar-default" role="navigation">
 				<div class="container-fluid">
@@ -39,7 +38,7 @@
 							<li><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
 							<li><a href="{{{ action('HomeController@showContact') }}}">Contact Me</a></li>
 							@if (Auth::check())
-								<li><a href="{{{ action('HomeController@logout') }}}">Log Out</a></li>
+								<li><a href="{{{ action('HomeController@logout') }}}">Log Out ({{{ Auth::user()->email }}})</a></li>
 							@else
 								<li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
 							@endif
@@ -65,7 +64,7 @@
 		<!-- FOOTER -->
 			<footer class="footer">
 				<!-- <p class="pull-right"><a href="#">Back to top</a></p> -->
-				<p>&copy; 2014 Karina Montes-Trevino <span class="pull-right"><a href="#">Back to top</a></span></p>
+				<p><strong>&copy; 2014 Karina Montes-Trevino</strong><span class="pull-right"><a href="#"><strong>Back to top</strong></a></span></p>
 			</footer>
 		</div>
  </nav>
