@@ -18,6 +18,14 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password');
+    
+    /**
+    * Relationship user has many posts
+    */
+	public function posts()
+	{
+	    return $this->hasMany('Post');
+	}
 
 	/**
 	 * Get the unique identifier for the user.
@@ -49,7 +57,7 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
     
-    public function setEmailAttribute()
+    public function setEmailAttribute($value)
     {
     	$this->attributes['email'] = strtolower($value);
     }
