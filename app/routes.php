@@ -11,6 +11,12 @@
 |
 */
 
+/* Uncomment to Log Eloquent Queries */
+Event::listen('illuminate.query', function($sql, $bindings, $time){
+  Log::info($sql);
+  Log::info(implode($bindings, ', '));
+});
+
 Route::get('/', 'HomeController@showWelcome');
 
 Route::get('/index', 'HomeController@showHome');
