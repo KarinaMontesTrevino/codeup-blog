@@ -11,17 +11,20 @@
 </style>
 @section('content')
    
-    {{ Form::open(array('action'=> array('PostsController@index'), 'method'=>'get')) }}      
-    {{ Form::label('search', 'Search Posts') }}
-    {{ Form:: text('search')}}
-    {{ Form::submit('Search')}}
-    {{ Form::close() }}
 
+    <div class= "pull-right">
+    {{ Form::open(array('action'=> array('PostsController@index'), 'method'=>'get')) }}    
+	    {{ Form::label('search', 'Search Posts') }}
+	    {{ Form:: text('search')}}
+	    {{ Form::submit('Search')}}
+    {{ Form::close() }}
+   </div>
 	<h1 class="blog-title">Technologic Blog</h1><span class="lead">Technology at your fingertips</span> 
 			 <p>
 						<h5><a href="{{{action ('PostsController@create') }}}"> Create New Post</a></h5>
 			 </p>
 			 <hr>
+
 
 	@foreach ($posts as $post)
 		<div class="blog-post">
@@ -38,6 +41,6 @@
 			</div>
 	@endforeach
 
-	{{ $posts->links() }}
+	{{ $posts->appends(array('search' => Input::get('search')))->links() }}
 		
 @stop
