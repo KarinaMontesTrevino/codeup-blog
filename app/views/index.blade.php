@@ -2,9 +2,9 @@
   <head>    
     <link href="/css/carousel.css" rel="stylesheet">
     <style>
-     .container p{
+     .carousel-caption p{
      
-     text-shadow: 2px 2px #FFF;
+     text-shadow: 3px 3px #0E1413;
      	
      }
 
