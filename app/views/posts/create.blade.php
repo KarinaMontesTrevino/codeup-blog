@@ -32,8 +32,8 @@
 				  </div>
 				 <!--Upload an image-->
 				 <div class="form-group">
-				     {{ Form::label('image', 'Image', array('class'=> 'col-sm-2 control-label'))}}
-				     <div class="col-sm-5">
+				     {{ Form::label('image', 'Upload Image', array('class'=> 'col-sm-2 control-label'))}}
+				      <div class="col-sm-5">
 				         {{ Form::file('image') }}
 				     </div>
 				</div>
