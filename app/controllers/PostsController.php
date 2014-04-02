@@ -72,10 +72,20 @@ class PostsController extends \BaseController {
 	        $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+           
 
+			if (Input::hasFile('image')) {
+
+				$file            = Input::file('image');
+				$destinationPath = 'uploads/';
+				$filename        = str_random(6) . '_' . $file->getClientOriginalName();
+				$uploadSuccess   = $file->move($destinationPath, $filename);
+			}
+            
+            $post->image_path = "/" . $destinationPath . $filename;
 			$post->save();
             Session::flash('successMessage', 'Post created sucessfully.');
-			return Redirect::action('PostsController@index');
+            return Redirect::action('PostsController@index');
 	    }
 
 	}
@@ -129,7 +139,7 @@ class PostsController extends \BaseController {
 	    else
 	    {
 	        // validation succeeded, create and save the post
-	        $post->user_id = 1;
+	        $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->save();
