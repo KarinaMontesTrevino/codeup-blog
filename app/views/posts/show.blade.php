@@ -1,13 +1,19 @@
 @extends('layouts.master')
+    <style>
+         #postimage{
+            width: 300px;
+            height: 300px;
+         }
+     </style>
 @section('content')
 
           
             	<h3 class="blog-post-title">{{{ $post->title }}}</h3>
-            	<p>{{{ $post->body }}}</p>
-                <!--Add a image in case we have one in the database for this post-->
                 @if (!empty($post->image_path))
-                <img src ="{{ $post->image_path }}" alt"img">
+                <p><img id="postimage" src ="{{ $post->image_path }}" alt"img"></p>
                 @endif
+                <p>{{{ $post->body }}}</p>
+                <!--Add a image in case we have one in the database for this post-->
                 <br>{{{ $post->created_at->format('l, F jS Y @ h:i A') }}}
                 <br>Writen by: {{{ $post->user->email }}}
 

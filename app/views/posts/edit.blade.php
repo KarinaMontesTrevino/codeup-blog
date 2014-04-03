@@ -33,10 +33,19 @@
 			  </div>
 			   <!--Upload an image-->
 				 <div class="form-group">
-				     {{ Form::label('image', 'Upload Image', array('class'=> 'col-sm-2 control-label'))}}
-				     <div class="col-sm-5">
-				         {{ Form::file('image') }}
-				     </div>
+				     @if(!empty($post->image_path))
+				         {{ Form::label('image', 'Update Image', array('class'=> 'col-sm-2 control-label'))}}
+				         <div class="col-sm-5">
+					         {{ Form::file('image') }}
+					         {{ Form::label('delete', 'Delete Image')}}
+						     {{ Form::checkbox('delete', 'delete', true) }}
+						 </div>
+					 @else
+					     {{ Form::label('image', 'Upload Image', array('class'=> 'col-sm-2 control-label'))}}
+					     <div class="col-sm-5">
+					     {{ Form::file('image') }}
+					     </div>
+                     @endif
 				</div>
 			  <div class="form-group">
 				  <div class="col-sm-offset-2 col-sm-5">
