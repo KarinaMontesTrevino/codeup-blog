@@ -33,6 +33,15 @@ App::after(function($request, $response)
 |
 */
 
+// Route::filter('post.protect', function($route)
+// {
+// 	$slug = $route->getParameter('posts');
+
+// 	$post = Post::findBySlug($slug);
+
+// 	if (!Auth::user()->canManagePost($post)) return Redirect::action('PostsController@show', $slug);
+// });
+
 Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::guest('login');
