@@ -21,5 +21,14 @@ class Post extends BaseModel {
 	    'body'       => 'required|max:10000',
         'file'       => 'image'
 	);
+
+    public function assignImage($inputFile){
+
+            $file = Input::file('image');
+            $destinationPath = 'uploads/';
+            $filename = str_random(6) . '_' . $file->getClientOriginalName();
+            $uploadSuccess = $file->move($destinationPath, $filename);
+            $this->attributes['image_path'] = '/' . $destinationPath . $filename; 
+    }
     
 }

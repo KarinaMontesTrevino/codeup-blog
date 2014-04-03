@@ -8,6 +8,11 @@
   	padding: 0px;
   }
 
+  #postimage{
+            width: 300px;
+            height: 300px;
+  }
+
 </style>
 @section('content')
    
@@ -33,7 +38,12 @@
 				<h3 class="blog-post-title"><a href = "{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a>
 				<a type= "button" class = "btn btn-primary-sm" href = "{{{ action('PostsController@edit', $post->id) }}}">&middot; Edit</a></h3>
 			</div>
-			<p>{{{ Str::words($post->body, 100) }}}</p>
+			<p>
+				@if (!empty($post->image_path))
+                <p><img id="postimage" src ="{{ $post->image_path }}" alt"img"></p>
+                @endif
+               {{{ Str::words($post->body, 100) }}}
+           </p>
 			<br>{{$post->created_at->format('l, F jS Y @ h:i A')}}
 			<br>Written by: {{$post->user->email }}
             <br><hr>

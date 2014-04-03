@@ -4,11 +4,20 @@
 			margin: center;
 			color: #537525;
 			margin-left: 240px;
-			margin-bottom: 140px;
+			margin-bottom: 100px;
 		}
 
 		h2{
 			text-align: center;
+		}
+
+		#preview{
+			width: 120px;
+			height: 80px;
+			float: right;
+		}
+		#image-form{
+			margin-bottom: 0px;
 		}
 	</style>
 @section('content')
@@ -35,22 +44,26 @@
 				 <div class="form-group">
 				     @if(!empty($post->image_path))
 				         {{ Form::label('image', 'Update Image', array('class'=> 'col-sm-2 control-label'))}}
-				         <div class="col-sm-5">
+				         <div id ="image-form" class="col-sm-5">
 					         {{ Form::file('image') }}
 					         {{ Form::label('delete', 'Delete Image')}}
 						     {{ Form::checkbox('delete', 'delete', true) }}
+						        <!--thumbnail preview image-->
+						        <div id="preview">
+								    <a href="#" class="thumbnail">
+								      <img src="{{ $post->image_path }}" alt="image goes here">
+								    </a>
+								</div>
 						 </div>
 					 @else
 					     {{ Form::label('image', 'Upload Image', array('class'=> 'col-sm-2 control-label'))}}
-					     <div class="col-sm-5">
+					     <div id="button"class="col-sm-5">
 					     {{ Form::file('image') }}
 					     </div>
                      @endif
-				</div>
-			  <div class="form-group">
-				  <div class="col-sm-offset-2 col-sm-5">
-					  <button type ="submit" class ="btn btn-danger">Save Changes</button>
-				  </div>
+					  <div class="col-sm-offset-2 col-sm-5">
+						  <button type ="submit" class ="btn btn-danger">Save Changes</button>
+					  </div>
 		      </div>
 	{{ Form::close() }}
     </div>
