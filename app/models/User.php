@@ -12,6 +12,30 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 
+	// Define constants to handle user roles
+
+    const ROLE_ADMIN = 1;
+    const ROLE_USER = 2;
+
+	public static $ROLES = array(
+
+		array('id' => 1, 'name' => 'Admin'),
+	    array('id' => 2, 'name' =>  'Stand' )
+		
+	);
+
+	public function isAdmin()
+	{
+    	return $this->role_id == self::ROLE_ADMIN;
+
+	}
+	
+	public function canManagePost($post)
+	{
+    	return ($this-> isAdmin()) || ($this->id == $post->user_id);
+
+	}
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *

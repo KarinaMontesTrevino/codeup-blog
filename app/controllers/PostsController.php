@@ -11,7 +11,7 @@ class PostsController extends \BaseController {
 	    $this->beforeFilter('auth', array('except' => array('index', 'show')));
 
 	    //Run post protect filter to make sure users can only manage their own posts
-	    //$this->beforeFilter('post.protect', array('only' => array('edit', 'update', 'destroy' )));
+	    $this->beforeFilter('post.protect', array('only' => array('edit', 'update', 'destroy' )));
 	}
 
 	/**

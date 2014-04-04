@@ -33,14 +33,17 @@ App::after(function($request, $response)
 |
 */
 
-// Route::filter('post.protect', function($route)
-// {
-// 	$slug = $route->getParameter('posts');
+Route::filter('post.protect', function($route)
+{
+	$id  = $route->getParameter('posts');
 
-// 	$post = Post::findBySlug($slug);
+	$post = Post::find($id);
 
-// 	if (!Auth::user()->canManagePost($post)) return Redirect::action('PostsController@show', $slug);
-// });
+	if(!Auth::user()->canManagePost($post)) {
+ 		Session::flash('errorMessage', " Sorry, you don't have the permission to perform that action");
+ 		return Redirect::action('PostsController@show', $id);
+    };
+});
 
 Route::filter('auth', function()
 {

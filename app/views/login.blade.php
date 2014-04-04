@@ -3,7 +3,7 @@
 @section('content')
        
        <div id="formlogin">
-       {{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-signin')) }}
+       {{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-signin', 'role'=>'form', 'method'=>'POST')) }}
 	        <h2 class="form-signin-heading">Sign in</h2>
 		    {{ Form::label('email', 'Email') }}
 		    {{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'Email')) }}

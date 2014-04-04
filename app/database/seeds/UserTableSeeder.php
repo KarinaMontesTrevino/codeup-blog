@@ -13,6 +13,14 @@ class UserTableSeeder extends Seeder {
         $user->last_name = 'Montes';
         $user->role_id = 1;
         $user->save();
+
+        $user = new User();
+        $user->email = 'hello@codeup.com';
+        $user->password = 'user!';
+        $user->first_name = 'Leesly';
+        $user->last_name = 'Vielma';
+        $user->role_id = 2;
+        $user->save();
     }
 
 }

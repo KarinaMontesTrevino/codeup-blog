@@ -22,6 +22,9 @@ class Post extends BaseModel {
         'file'       => 'image'
 	);
 
+    /**
+    * Helper to upload images
+    */
     public function assignImage($inputFile){
 
             $file = Input::file('image');
