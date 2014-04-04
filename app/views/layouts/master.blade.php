@@ -39,6 +39,7 @@
 							<li><a href="{{{ action('HomeController@showContact') }}}">Contact Me</a></li>
 							@if (Auth::check())
 								<li><a href="{{{ action('HomeController@logout') }}}">Log Out ({{{ Auth::user()->email }}})</a></li>
+								<li><a href="#">My Account</a></li>
 							@else
 								<li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
 							@endif

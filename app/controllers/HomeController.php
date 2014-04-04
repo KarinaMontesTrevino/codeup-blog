@@ -92,6 +92,40 @@ class HomeController extends BaseController {
 		
 	}
 
+	public function createAccount()
+    {
+        return View::make('create_account');
+
+	}
+
+	public function storeAccount()
+	{
+		// create the validator
+	    $validator = Validator::make(Input::all(), User::$rules);
+
+	    // attempt validation
+	    if ($validator->fails())
+	    {    
+	    	 Session::flash('errorMessage', 'User could not be created - see form errors.');
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    }
+	    else
+	    {
+	        // validation succeeded, create and save the post
+	        $user = new User();
+	        $user->role_id = User::ROLE_USER;
+			$user->first_name = Input::get('first_name');
+			$user->last_name = Input::get('last_name');
+			$user->eMail = Input::get('email');
+			$user->password = Input::get('password');
+           
+			$user->save();
+            Session::flash('successMessage', 'User created sucessfully.');
+            return Redirect::action('HomeController@showLogin');
+	    }
+	}
+
 	public function logout()
     {
     	Auth::logout();

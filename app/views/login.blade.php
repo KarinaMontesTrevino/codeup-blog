@@ -14,5 +14,9 @@
 	        </label>
 	        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       {{ Form::close() }}
+           <div class = "text-center"> 
+	           <h4> Not an existing user?</h4>
+	            <a href = "{{{ action('HomeController@createAccount') }}}"> Sign Up!</a>
+	       </div>
        </div>
 @stop

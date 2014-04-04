@@ -24,6 +24,17 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 		
 	);
 
+	/**
+    *  Validation rules
+    */
+    public static $rules = array(
+
+	    'first_name'  => 'required|max:50',
+	    'last_name'   => 'required|max:50',
+        'email'       => 'required',
+        'password'    => 'required|min:8|confirmed'
+	);
+
 	public function isAdmin()
 	{
     	return $this->role_id == self::ROLE_ADMIN;

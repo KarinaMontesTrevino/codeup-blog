@@ -25,6 +25,10 @@ Route::post('/login', 'HomeController@doLogin');
 
 Route::get('/logout', 'HomeController@logout');
 
+Route::get('/create', 'HomeController@createAccount');
+
+Route::post('/store', 'HomeController@storeAccount');
+
 Route::get('/index', 'HomeController@showHome');
 
 Route::get('/resume', 'HomeController@showResume');
