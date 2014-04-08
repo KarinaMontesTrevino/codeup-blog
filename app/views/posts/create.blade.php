@@ -23,7 +23,7 @@
 	                  {{  $errors->first('title', '<span class="help-block">:message</span>') }}
 				    </div>
 			   </div>
-				  <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
+				  <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}"> <span class="mega-octicon">
 				   {{ Form::label('body', 'Body', array('class'=> 'col-sm-2 control-label')) }}
 				    <div class="col-sm-5">
 					  {{ Form::textarea('body', null, array('class' => 'form-control', 'row' => '5')) }}
@@ -42,6 +42,10 @@
 						  <button type ="submit" class ="btn btn-primary">Create Post</button>
 					  </div>
 			      </div>
+			      <script>
+		                 // Replace the <textarea id="body"> with a CKEditor
+		                 CKEDITOR.replace( 'body' );
+			      </script> 
 		{{ Form::close() }}
 	    </div>    	
 @stop

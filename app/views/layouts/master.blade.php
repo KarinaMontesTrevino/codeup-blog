@@ -13,7 +13,10 @@
 		<!--Google fonts-->
 		<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
 		<link href="/css/index.css" rel="stylesheet">
+		<!--CSS for sign in form-->
 		<link href="/css/signin.css" rel="stylesheet">
+		<!-- CKEditor -->
+        <script src="/ckeditor/ckeditor.js"></script>
 		@yield('topscript')
 <body> 
 
@@ -38,7 +41,7 @@
 							<li><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
 							<li><a href="{{{ action('HomeController@showContact') }}}">Contact Me</a></li>
 							@if (Auth::check())
-								<li><a href="{{{ action('HomeController@logout') }}}">Log Out ({{{ Auth::user()->email }}})</a></li>
+								<li><a href="{{{ action('HomeController@logout') }}}">Log Out ({{{ Auth::user()->first_name }}})</a></li>
 								<li><a href="#">My Account</a></li>
 							@else
 								<li><a href="{{{ action('HomeController@showLogin') }}}">Login</a></li>
